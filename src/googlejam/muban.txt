@@ -1,0 +1,46 @@
+package googlejam;
+
+import java.io.BufferedWriter;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Scanner;
+
+public class Sorting {
+
+		/**
+		 * @param args
+		 */
+		public static void main(String[] args) {
+			Scanner in = null;
+			try {
+				in = new Scanner(new FileInputStream("C:\\Users\\gu\\Downloads\\A-large.in"));
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			PrintWriter out = null;
+			try {
+				out = new PrintWriter(new BufferedWriter(new FileWriter("C:\\Users\\gu\\Downloads\\A-large.out")));
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			int caseCount;
+	        caseCount = in.nextInt();
+			for(int i=1; i<=caseCount; i++) {
+				StringBuffer phoneNum = new StringBuffer(in.next());
+				String formate = in.next();
+
+				StringBuffer output = new StringBuffer("Case #"+i+": ");
+				
+				output.deleteCharAt(output.length()-1);
+				out.println(output.toString());
+			}
+			in.close();
+			out.close();
+		}
+
+	}
